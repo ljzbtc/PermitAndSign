@@ -37,9 +37,10 @@ contract NftMarketTest is Test {
         nft.mint(address(this), tokenID);
     }
 
-    function test_verfiy_buy() public {
+    function test_verfiy_buy(address buyer) public {
+        
         uint price = 1000;
-        address buyer = address(0x112);
+        vm.assume(buyer != address(0));
 
         assertNotEq(nft.ownerOf(tokenID), buyer);
 
