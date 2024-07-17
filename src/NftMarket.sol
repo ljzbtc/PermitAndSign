@@ -124,43 +124,4 @@ contract NftMarket {
 
 }
 
-
-    // function signatureBuy(bytes32 signedhash, bytes memory signature,uint tokenId,address token_address,uint buy_token_amount) internal view returns (bool isValid) {
-
-
-    //     require(signedhash.recover(signature) == NFT_OWNER,"not whitelisted");
-
-    //     _buynft(token_address, tokenId, buy_token_amount);
-
-
-    // }
-
-    // function permitBuy(
-
-    //     address owner,
-    //     address spender,
-    //     uint256 value,
-    //     uint256 deadline,
-    //     uint8 v,
-    //     bytes32 r,
-    //     bytes32 s,
-    //     address nftAddress,
-    //     uint256 tokenId
-    // ) public {
-
-    //     require(msg.sender == ownwer, "Only owner can permit buy");
-    //     require(nftList[nftAddress][tokenId] > 0, "NFT not listed");
-    //     require(value >= nftList[nftAddress][tokenId], "Not enough funds");
-
-    //     IERC20Permit(IEC20_TOKEN_ADDRESS).permit(owner, spender, value, deadline, v, r, s);
-    //     bool result = IERC20(IEC20_TOKEN_ADDRESS).transferFrom(
-    //         owner,
-    //         address(this),
-    //         value
-    //     );
-    //     require(result, "ERC20 transfer failed");
-    //     nft.safeTransferFrom(nft.ownerOf(tokenId), owner, tokenId);
-    //     emit NftMarketplace_Bought(nftAddress, tokenId, owner);
-        
-    // }
 }

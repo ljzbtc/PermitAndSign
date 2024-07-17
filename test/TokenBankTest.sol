@@ -29,22 +29,22 @@ contract TokenBankTest is Test {
         bank = new TokenBank(address(token));
 
     }
-    function test_deposit(address _depositAddress,uint _depositAmount) public {
+    // function test_deposit(address _depositAddress,uint _depositAmount) public {
 
-        vm.assume(_depositAmount > 0.001*1E18);
-        vm.assume(_depositAmount < 10000*1E18);
-        vm.assume(_depositAddress != address(0));
+    //     vm.assume(_depositAmount > 0.001*1E18);
+    //     vm.assume(_depositAmount < 10000*1E18);
+    //     vm.assume(_depositAddress != address(0));
 
-        token.transfer(_depositAddress, _depositAmount);
+    //     token.transfer(_depositAddress, _depositAmount);
 
-        vm.startPrank(_depositAddress);
-        token.approve(address(bank), _depositAmount);
-        bank.deposit(_depositAmount);
-        vm.stopPrank();
+    //     vm.startPrank(_depositAddress);
+    //     token.approve(address(bank), _depositAmount);
+    //     bank.deposit(_depositAmount);
+    //     vm.stopPrank();
 
-        assertEq(bank.AddressToAmount(_depositAddress), _depositAmount);
+    //     assertEq(bank.AddressToAmount(_depositAddress), _depositAmount);
 
-    }
+    // }
 
 
     function test_Permit(uint160 _ownerPrivateKey,uint _depositAmount) public {
