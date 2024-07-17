@@ -43,7 +43,6 @@ contract NftMarket {
         "Nft_witheList(address wallet)"
     );
 
-
     // The list of NFTs on the market
     mapping(address => mapping(uint256 => uint256)) public nftList;
 
@@ -114,9 +113,9 @@ contract NftMarket {
 )
 );
     }
-    //keccak256("Nft(address wallet)")
+    
     function verifyBuy(address wallet, uint8 v, bytes32 r, bytes32 s,address token_address,uint256 tokenId,uint256 buy_token_amount) public {
-    // Note: we need to use `encodePacked` here instead of `encode`.
+   
     bytes32 digest = keccak256(abi.encodePacked("\x19\x01", DOMAIN_SEPARATOR(), keccak256(abi.encode(Nft_witheList_TYPEHASH, wallet))));
     require(ecrecover(digest, v, r, s)==NFT_OWNER, "not whitelisted");
 
